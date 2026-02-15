@@ -54,13 +54,16 @@
 }
 
 :root {
-  --champagne: #f7e7ce;
-  --rose-gold: #b76e79;
-  --charcoal: #2c2c2c;
-  --soft-white: #ffffff;
-  --font-main: "Montserrat", sans-serif;
+  /* TRADITIONAL PALETTE */
+  --trad-emerald: #0b4f35; /* Deep Forest Green */
+  --trad-gold: #d4af37; /* Antique Gold */
+  --trad-red: #8e0e41; /* Alta Red (Accent) */
+  --paper-bg: #fffbf0; /* Warm Rice Paper */
+
+  /* FONTS */
+  --font-heading: "Cinzel", serif;
   --font-script: "Great Vibes", cursive;
-  --font-bengali: "Noto Sans Bengali", sans-serif;
+  --font-bengali: "Noto Sans Bengali", serif;
 }
 
 * {
@@ -71,14 +74,24 @@
 }
 
 body {
-  background-color: var(--soft-white);
-  font-family: var(--font-main);
-  color: var(--charcoal);
-  line-height: 1.6;
+  background-color: var(--paper-bg);
+  /* Floral Pattern Overlay for Texture */
+  background-image: url("https://www.transparenttextures.com/patterns/floral-linen.png");
+  font-family: var(--font-bengali);
+  color: #2c2c2c;
   overflow-x: hidden;
 }
 
-/* --- RESPONSIVE NAVIGATION --- */
+/* --- ORNAMENTAL DIVIDER --- */
+.ornament-divider {
+  text-align: center;
+  margin: 40px 0;
+  color: var(--trad-gold);
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+/* --- NAVIGATION --- */
 nav {
   position: fixed;
   top: 0;
@@ -87,75 +100,65 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 251, 240, 0.98);
   z-index: 1000;
-  border-bottom: 1px solid var(--champagne);
-  height: 70px;
+  border-bottom: 3px double var(--trad-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  font-family: var(--font-script);
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 1.8rem;
-  color: var(--rose-gold);
-  z-index: 1002;
+  color: var(--trad-emerald);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 35px;
-  transition: 0.4s ease-in-out;
+  gap: 30px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--charcoal);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  color: var(--trad-emerald);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-family: var(--font-heading);
   transition: color 0.3s;
 }
-
 .nav-links a:hover {
-  color: var(--rose-gold);
+  color: var(--trad-red);
 }
 
-/* Hamburger Menu Icon */
 .hamburger {
   display: none;
-  cursor: pointer;
   font-size: 1.5rem;
-  color: var(--charcoal);
-  z-index: 1002;
+  color: var(--trad-emerald);
+  cursor: pointer;
 }
 
-/* Mobile Nav Styles */
 @media (max-width: 850px) {
   .hamburger {
     display: block;
   }
-
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden by default */
+    right: -100%;
     width: 100%;
     height: 100vh;
-    background: var(--soft-white);
+    background: var(--paper-bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    border-left: 5px solid var(--trad-gold);
+    transition: 0.4s;
     z-index: 1001;
   }
-
   .nav-links.active {
     right: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
   }
 }
 
@@ -167,62 +170,102 @@ nav {
   justify-content: center;
   text-align: center;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80");
+    linear-gradient(rgba(11, 79, 53, 0.6), rgba(11, 79, 53, 0.4)),
+    url("https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1920&q=80");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: white;
-  padding: 0 20px;
+  padding: 20px;
+  position: relative;
 }
 
+/* Traditional Border Frame for Hero */
 .hero-box {
-  padding: 40px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  width: 100%;
-  max-width: 700px;
+  padding: 60px 30px;
+  background: rgba(255, 251, 240, 0.9);
+  border: 2px solid var(--trad-gold);
+  outline: 5px solid rgba(255, 251, 240, 0.5);
+  outline-offset: 10px;
+  max-width: 800px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Corner Ornaments using CSS */
+.hero-box::before,
+.hero-box::after {
+  content: "❖";
+  position: absolute;
+  font-size: 2rem;
+  color: var(--trad-emerald);
+}
+.hero-box::before {
+  top: 10px;
+  left: 10px;
+}
+.hero-box::after {
+  bottom: 10px;
+  right: 10px;
+}
+
+.shloka {
+  font-size: 1rem;
+  color: var(--trad-red);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.names {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--trad-emerald);
+  margin: 10px 0;
+  text-shadow: 1px 1px 0px var(--trad-gold);
 }
 
 .hero-date {
-  letter-spacing: 6px;
-  font-size: 1rem;
-  font-weight: 300;
-}
-/* Clamp for responsive font size */
-.names {
-  font-family: var(--font-script);
-  font-size: clamp(3rem, 10vw, 6rem);
-  color: var(--champagne);
-  margin: 15px 0;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  color: var(--trad-gold);
+  letter-spacing: 4px;
+  font-weight: 700;
+  background: var(--trad-emerald);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
-/* --- INVITATION SECTION --- */
+/* --- INVITATION SCROLL --- */
 .invitation {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
 }
-.mantra {
-  font-family: var(--font-bengali);
-  color: var(--rose-gold);
-  font-size: 1.3rem;
+
+.invitation-card {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 3px double var(--trad-gold);
+  padding: 60px 40px;
+  background: #fff;
+  position: relative;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ganesh-icon {
+  font-size: 3rem;
+  color: var(--trad-red);
   margin-bottom: 20px;
 }
+
 .invite-text {
-  font-family: var(--font-bengali);
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  line-height: 2;
-  color: var(--charcoal);
+  font-size: 1.4rem;
+  line-height: 2.2;
+  color: var(--trad-emerald);
 }
 
-/* --- GALLERY SECTION --- */
+/* --- TRADITIONAL GALLERY --- */
 .gallery-section {
-  padding: 60px 0;
-  background: #fdfdfd;
+  padding: 80px 0;
 }
 .container {
   width: 90%;
@@ -234,11 +277,9 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
   margin-bottom: 100px;
 }
-
-/* Alternating Layout for Desktop */
 .gallery-item:nth-child(even) {
   direction: rtl;
 }
@@ -247,74 +288,83 @@ nav {
 }
 
 .gallery-image-wrapper {
+  border: 10px solid #fff;
+  outline: 1px solid var(--trad-gold);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   position: relative;
-  overflow: hidden;
-  box-shadow: 15px 15px 0px var(--champagne);
+}
+
+/* Decorative Corner for Images */
+.gallery-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  pointer-events: none;
 }
 
 .gallery-image-wrapper img {
   width: 100%;
-  height: 550px;
+  height: 500px;
   object-fit: cover;
   display: block;
-  transition: transform 1s ease;
+  transition: transform 0.5s;
 }
-
 .gallery-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.03);
 }
 
 .gallery-content {
   padding: 20px;
+  text-align: center;
 }
 .poem-bn {
-  font-family: var(--font-bengali);
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-size: 1.6rem;
+  color: var(--trad-emerald);
+  margin-bottom: 15px;
   line-height: 1.8;
-  color: var(--charcoal);
-  margin-bottom: 20px;
-  position: relative;
-}
-.poem-bn::before {
-  content: "“";
-  position: absolute;
-  left: -30px;
-  top: -15px;
-  font-size: 4rem;
-  color: var(--champagne);
-  opacity: 0.5;
 }
 .poem-en {
-  font-style: italic;
-  color: var(--rose-gold);
+  font-family: var(--font-heading);
+  color: var(--trad-red);
+  font-size: 0.9rem;
   letter-spacing: 1px;
-  font-weight: 300;
-  font-size: 0.95rem;
 }
 
-/* --- ITINERARY (TIMELINE) --- */
+/* --- TRADITIONAL ITINERARY --- */
 .itinerary {
-  background: var(--charcoal);
-  color: white;
-  padding: 80px 20px;
+  background: var(--trad-emerald);
+  background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
+  color: var(--trad-gold);
+  padding: 100px 20px;
 }
+
 .timeline {
   position: relative;
   max-width: 900px;
   margin: 50px auto;
 }
+/* Center Line as a decorative border */
 .timeline::before {
   content: "";
   position: absolute;
   left: 50%;
-  width: 1px;
+  width: 4px;
   height: 100%;
-  background: rgba(183, 110, 121, 0.3);
+  background-image: linear-gradient(
+    to bottom,
+    var(--trad-gold) 50%,
+    transparent 50%
+  );
+  background-size: 4px 20px; /* Dashed/Dotted effect */
 }
 
 .event-block {
   width: 50%;
-  padding: 20px 40px;
+  padding: 20px 50px;
   position: relative;
 }
 .event-block.left {
@@ -327,97 +377,95 @@ nav {
 }
 
 .event-block h3 {
-  font-size: 1.4rem;
-  color: var(--champagne);
-  margin-bottom: 5px;
-  letter-spacing: 2px;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--trad-gold);
+  display: inline-block;
+  margin-bottom: 10px;
 }
 .event-block p {
-  font-family: var(--font-bengali);
-  opacity: 0.8;
-  font-size: 0.95rem;
-}
-.event-block .time {
-  color: var(--rose-gold);
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-family: var(--font-main);
-  font-size: 0.9rem;
+  color: #ddd;
+  font-size: 1.1rem;
 }
 
-/* --- VENUE & MAP --- */
+/* Swastika/Om Markers */
+.event-block::after {
+  content: "ॐ";
+  position: absolute;
+  top: 25px;
+  width: 40px;
+  height: 40px;
+  background: var(--trad-red);
+  border: 2px solid var(--trad-gold);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.left::after {
+  right: -22px;
+}
+.right::after {
+  left: -22px;
+}
+
+/* --- VENUE --- */
 .venue {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 .map-wrapper {
+  border: 5px solid var(--trad-gold);
+  box-shadow: 0 10px 0 var(--trad-emerald);
   width: 100%;
   max-width: 900px;
   height: 400px;
   margin: 40px auto;
-  border: 1px solid var(--champagne);
-  filter: grayscale(100%) sepia(20%);
-  transition: 0.6s;
-}
-.map-wrapper:hover {
-  filter: grayscale(0%);
 }
 
 footer {
   padding: 60px 20px;
-  background: var(--soft-white);
+  background: var(--trad-emerald);
   text-align: center;
-  border-top: 1px solid var(--champagne);
+  color: var(--paper-bg);
+  border-top: 5px solid var(--trad-gold);
 }
 .family-sign {
   font-family: var(--font-script);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--rose-gold);
-  margin-top: 10px;
+  font-size: 4rem;
+  color: var(--trad-gold);
 }
 
-/* --- MOBILE RESPONSIVENESS FIXES --- */
+/* Mobile Fixes */
 @media (max-width: 992px) {
-  /* Gallery Stacking */
   .gallery-item {
-    grid-template-columns: 1fr; /* Stack vertically */
+    grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
   }
-  /* Reset Direction for Mobile */
   .gallery-item:nth-child(even) {
     direction: ltr;
   }
   .gallery-item:nth-child(even) .gallery-content {
     direction: ltr;
   }
-
-  .gallery-image-wrapper img {
-    height: 400px;
-  }
-  .gallery-image-wrapper {
-    box-shadow: 10px 10px 0px var(--champagne);
-  }
-
-  .poem-bn::before {
-    left: 50%;
-    transform: translateX(-50%);
-    top: -30px;
-  }
-
-  /* Timeline Stacking */
   .timeline::before {
-    left: 20px; /* Move line to left */
+    left: 20px;
   }
   .event-block {
     width: 100%;
     left: 0 !important;
     text-align: left !important;
-    padding: 20px 0 20px 50px; /* Add padding for line */
+    padding: 20px 0 20px 60px;
   }
-
-  /* Typography Adjustments */
-  .hero-date {
-    letter-spacing: 3px;
+  .left::after,
+  .right::after {
+    left: 0px;
   }
 }

@@ -13,41 +13,71 @@
   </head>
   <body>
     <nav>
-      <div class="logo">N & S</div>
-
-      <div class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-
+      <div class="logo">N <span style="color: var(--trad-red)">To</span> S</div>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#hero" onclick="closeMenu()">Home</a></li>
-        <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
-        <li><a href="#itinerary" onclick="closeMenu()">Events</a></li>
-        <li><a href="#venue" onclick="closeMenu()">Venue</a></li>
+        <li><a href="#hero" onclick="closeMenu()">Suvagomon</a></li>
+        <li><a href="#gallery" onclick="closeMenu()">Smriti</a></li>
+        <li><a href="#itinerary" onclick="closeMenu()">Anusthan</a></li>
+        <li><a href="#venue" onclick="closeMenu()">Thikana</a></li>
       </ul>
     </nav>
 
     <header class="hero" id="hero">
       <div class="hero-box">
-        <p class="hero-date">MARCH . 04 . 2026</p>
+        <div class="shloka">॥ যদেতদ্ হৃদয়ং মম, তদস্তু হৃদয়ং তব ॥</div>
         <h1 class="names">Neha & Subhadip</h1>
-        <p style="letter-spacing: 4px; font-weight: 400; font-size: 0.8rem">
+        <div class="hero-date">04 . 03 . 2026</div>
+        <p
+          style="
+            margin-top: 15px;
+            font-family: var(--font-heading);
+            color: var(--trad-emerald);
+          "
+        >
           TOGETHER WITH THEIR FAMILIES
         </p>
       </div>
     </header>
 
     <section class="invitation">
-      <div class="mantra">।। ওঁ শ্রী প্রজাপতয়ে নমঃ ।।</div>
-      <p class="invite-text">
-        বেদবাণী ও মন্ত্রোচ্চারণে, অগ্নিদেবতাকে সাক্ষী মানিয়া, সপ্তপদী বিধান
-        অনুসারে আমাদের প্রিয় কন্যার পাণিগ্রহণ অনুষ্ঠান সম্পন্ন হইবে। আমাদের এই
-        আনন্দঘন মুহূর্তে আপনাদের সপরিবার উপস্থিতি ও আশীর্বাদ একান্তভাবে কাম্য।
-      </p>
+      <div class="invitation-card">
+        <div class="ganesh-icon">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/10542/10542526.png"
+            width="60"
+            style="opacity: 0.8"
+          />
+        </div>
+        <div class="mantra">।। ওঁ শ্রী প্রজাপতয়ে নমঃ ।।</div>
+        <div class="ornament-divider">
+          <i class="fas fa-leaf"></i> ✤ <i class="fas fa-leaf"></i>
+        </div>
+        <p class="invite-text">
+          পরম করুণাময়ের অশেষ কৃপায়,<br />
+          বেদবাণী ও মন্ত্রোচ্চারণে, অগ্নিদেবতাকে সাক্ষী মানিয়া,<br />
+          সপ্তপদী বিধান অনুসারে আমাদের আদরের কন্যার<br />
+          <strong>শুভ বিবাহ</strong> অনুষ্ঠান সুসম্পন্ন হইবে।
+        </p>
+        <p class="invite-text" style="margin-top: 20px; font-size: 1.1rem">
+          এই আনন্দঘন মুহূর্তে আপনাদের সপরিবার উপস্থিতি<br />ও আশীর্বাদ
+          একান্তভাবে কাম্য।
+        </p>
+      </div>
     </section>
 
     <section class="gallery-section" id="gallery">
       <div class="container">
+        <h2
+          style="
+            text-align: center;
+            color: var(--trad-emerald);
+            font-family: var(--font-heading);
+            margin-bottom: 60px;
+          "
+        >
+          ~ PREM O PORINAY ~
+        </h2>
         <div class="gallery-item">
           <div class="gallery-image-wrapper">
             <img src="assets/side4.jpeg" alt="Tradition" />
@@ -132,53 +162,48 @@
         <h2
           style="
             text-align: center;
-            font-family: var(--font-main);
-            letter-spacing: 8px;
+            font-family: var(--font-heading);
+            letter-spacing: 4px;
             margin-bottom: 60px;
-            font-weight: 300;
           "
         >
-          ITINERARY
+          卐 ANUSTHAN SUCHI 卐
         </h2>
 
         <div class="timeline">
+          <div class="event-block left">
+            <h3>AIBURO BHAT</h3>
+            <p class="time">MARCH 3 | 1:30 PM</p>
+            <p>শেষ বারের মতো কুমারী ভোজ।</p>
+          </div>
           <div class="event-block right">
-            <p class="time">MARCH 3 | 9:30 AM</p>
             <h3>GATRA HARIDRA</h3>
-            <p>
-              The sacred ceremony of turmeric, painting the morning in gold.
-            </p>
+            <p class="time">MARCH 4 | 9:30 AM</p>
+            <p>কাঁচা হলুদের রঙে সাজুক জীবন।</p>
           </div>
           <div class="event-block left">
-            <p class="time">MARCH 3 | 1:30 PM</p>
-            <h3>AIBURO BHAT</h3>
-            <p>
-              The traditional final feast hosted with love at the bride's
-              residence.
-            </p>
-          </div>
-          <div class="event-block right">
+            <h3>SHUVO BIBAHO</h3>
             <p class="time">MARCH 4 | 8:30 PM</p>
-            <h3>THE WEDDING</h3>
-            <p>The main ceremony and exchange of vows at Barkona, Bankura.</p>
+            <p>সাত পাকে বাঁধা পড়ার পবিত্র লগ্ন।</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="venue" id="venue">
-      <h2 style="letter-spacing: 6px; font-weight: 300">THE LOCATION</h2>
-      <p
+      <div class="ornament-divider">❖</div>
+      <h2
         style="
-          margin-top: 15px;
-          opacity: 0.6;
-          font-size: 0.9rem;
-          letter-spacing: 1px;
+          font-family: var(--font-heading);
+          color: var(--trad-emerald);
+          margin-bottom: 20px;
         "
       >
-        Vill & Post- Kultuka, Dist- Bankura, West Bengal - 722133
+        SUBHO VIVAH BHAVAN
+      </h2>
+      <p style="font-size: 1.1rem; color: #555">
+        Vill & Post- Kultuka, Dist- Bankura, 722133
       </p>
-
       <div class="map-wrapper">
         <iframe
           width="100%"
@@ -196,6 +221,7 @@
 
     <footer>
       <div class="family-sign">Thank You</div>
+      <div style="margin-top: 20px; font-size: 1.5rem">✤</div>
     </footer>
 
     <script>
