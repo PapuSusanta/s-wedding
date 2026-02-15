@@ -1,0 +1,735 @@
+/* great-vibes-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Great Vibes';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/great-vibes-v21-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* cinzel-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/cinzel-v26-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* cinzel-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/cinzel-v26-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* noto-sans-bengali-regular - bengali */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Sans Bengali';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/noto-sans-bengali-v33-bengali-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* noto-sans-bengali-700 - bengali */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Sans Bengali';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/noto-sans-bengali-v33-bengali-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+:root {
+    --primary-red: #002366;
+    --gold: #d4af37;
+    --cream: #fffaf0;
+    --text-dark: #001233;
+    --accent-gold: #f9e29b;
+    --font-heading: 'Cinzel', serif;
+    --font-bengali: 'Noto Sans Bengali', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--cream);
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+    overflow-x: hidden;
+}
+
+#floating-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Utilities */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    border-bottom: 3px double var(--gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+    background: rgba(0, 35, 102, 0.95);
+    /* Using Royal Blue */
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: var(--font-script);
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+.heart-beat {
+    color: #c90a0a;
+    animation: beat 1s infinite;
+    display: inline-block;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--gold);
+}
+
+.hamburger {
+    display: none;
+    color: var(--gold);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+header {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/bg-frame.jpg') no-repeat center center/cover;
+    filter: blur(4px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+
+/* --- NEW: Spiritual Header (Mantra & Prajapati) --- */
+.spiritual-header {
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.mantra {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    color: #fdfdfd;
+    /* White/Cream */
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.praja {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    color: var(--gold);
+    /* Gold */
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.pre-title {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.main-title span {
+    color: var(--gold);
+    font-family: var(--font-script);
+}
+
+/* --- DATE DISPLAY --- */
+.hero-date {
+    margin-bottom: 30px;
+}
+
+.date-line {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--gold);
+    text-shadow: 1px 1px 3px #000;
+    letter-spacing: 2px;
+}
+
+.bengali-date {
+    display: block;
+    font-family: var(--font-bengali);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.time-box {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 60px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.time-box small {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+/* Poem Section */
+.section-ornament {
+    background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png"), var(--primary-red);
+    color: var(--gold);
+    text-align: center;
+}
+
+.poem-card {
+    border: 2px solid var(--gold);
+    padding: 30px;
+    display: inline-block;
+    position: relative;
+}
+
+.bengali-text {
+    font-family: var(--font-bengali);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.english-translation {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.fa-quote-left,
+.fa-quote-right {
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+/* Couple Section */
+.couple-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.designation {
+    font-family: var(--font-script);
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.divider-small {
+    height: 2px;
+    width: 40px;
+    background: var(--gold);
+    margin: 0 auto 10px;
+}
+
+.img-wrapper {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 5px solid var(--gold);
+    padding: 5px;
+    background: #fff;
+}
+
+.groom-border {
+    border-color: var(--primary-red);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-card h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* Gathbandhan Image */
+.ampersand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.gathbandhan-img {
+    width: 160px;
+    height: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.gathbandhan-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    opacity: 1;
+}
+
+/* Events Section (Zig-Zag) */
+.section-dark {
+    background: #001233;
+    color: white;
+    padding-bottom: 80px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--gold);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item::after {
+    content: '✦';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -17px;
+    background-color: var(--primary-red);
+    border: 2px solid var(--gold);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    text-align: center;
+    line-height: 25px;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid var(--gold);
+}
+
+.highlight-event {
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 2px solid var(--gold);
+}
+
+.content h3 {
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.bengali-desc {
+    font-family: var(--font-bengali);
+    color: #ddd;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.time-loc p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary-red);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* --- NEW VENUE SECTION STYLES --- */
+.venue-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--cream);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+}
+
+.venue-intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.venue-details {
+    margin-bottom: 30px;
+}
+
+.venue-name {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.venue-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.venue-bengali {
+    font-family: var(--font-bengali);
+    color: var(--primary-red);
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.map-container {
+    max-width: 800px;
+    height: 350px;
+    margin: 0 auto 30px;
+    border: 3px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rsvp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.rsvp-btn:hover {
+    transform: scale(1.05);
+    background: #20bd5a;
+}
+
+/* Petals Animation */
+.petal {
+    position: absolute;
+    background: #d4af37;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: fall linear infinite;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Footer */
+/* footer {
+    background: var(--primary-red);
+    color: var(--gold);
+    text-align: center;
+    padding: 30px;
+    border-top: 5px solid var(--gold);
+} */
+
+/* --- UPDATED FOOTER STYLES --- */
+footer {
+    background: var(--primary-red);
+    color: var(--cream);
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 5px double var(--gold);
+}
+
+.footer-thankyou {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 15px;
+    display: inline-block;
+    width: 60%;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 15px;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background: rgba(164, 18, 18, 0.98);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-bg {
+        background-position: center top;
+    }
+
+    .gathbandhan-img {
+        width: 120px;
+        margin: 20px 0;
+    }
+
+    .mantra {
+        font-size: 1rem;
+    }
+
+    .praja {
+        font-size: 1.4rem;
+    }
+
+    .footer-thankyou {
+        font-size: 2.5rem;
+    }
+}

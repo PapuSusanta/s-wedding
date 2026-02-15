@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhadip & Neha | Subho Vivah</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="logo">S <span class="heart-beat">❤</span> N</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#poem" onclick="toggleMenu()">Invitation</a></li>
+            <li><a href="#couple" onclick="toggleMenu()">Couple</a></li>
+            <li><a href="#events" onclick="toggleMenu()">Events</a></li>
+            <li><a href="#venue" onclick="toggleMenu()">Venue</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content" data-aos="fade-up">
+            <div class="spiritual-header">
+                <p class="mantra">।। যদিদং হৃদয়ং মম, ত্বদিদং হৃদয়ং তব ।।</p>
+                <p class="praja">শ্রী শ্রী প্রজাপতয়ে নমঃ</p>
+            </div>
+
+            <p class="pre-title">Shubho Vivah</p>
+            <h1 class="main-title">Subhadip <span>&</span> Neha</h1>
+
+            <div class="hero-date">
+                <span class="date-line">March 4th, 2026</span>
+                <span class="bengali-date">১৯শে ফাল্গুন, ১৪৩২</span>
+            </div>
+
+            <div class="countdown-container">
+                <div class="time-box"><span id="days">00</span><small>Days</small></div>
+                <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
+                <div class="time-box"><span id="minutes">00</span><small>Mins</small></div>
+                <div class="time-box"><span id="seconds">00</span><small>Secs</small></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="poem" class="section-padding section-ornament">
+        <div class="container">
+            <div class="poem-card" data-aos="fade-up">
+                <i class="fas fa-quote-left"></i>
+                <p class="bengali-text">
+                    শুভ শঙ্খধ্বনি আর মঙ্গল আলোর আবাহনে,<br>
+                    রাজকীয় ঐশ্বর্যে সজ্জিত এই শুভ লগ্নে,<br>
+                    আমাদের প্রিয় পুত্রের পাণিগ্রহণ সম্পন্ন হবে<br>
+                    ধর্ম, রীতি ও আচার অনুসারে।<br>
+                    <br>
+                    অগ্নিকে সাক্ষী রেখে, বেদমন্ত্রের পবিত্র ধ্বনিতে,<br>
+                    সাত পাকে আবদ্ধ হবে দুটি প্রাণ এক অটুট বন্ধনে।<br>
+                    চন্দন-ফুল-ধূপের সুবাসে ভরে উঠবে অঙ্গন,<br>
+                    আপনাদের সসম্মান উপস্থিতিই হবে এ অনুষ্ঠানের গৌরববৃদ্ধি।<br>
+                    <br>
+                    এই শুভক্ষণে সপরিবার আগমন করে<br>
+                    নবদম্পতিকে আশীর্বাদে ধন্য করবেন —<br>
+                    এই আমাদের একান্ত প্রার্থনা।
+                </p>
+                <div class="english-translation">
+                    "May this union remain eternal,<br>Painted with colors of love."
+                </div>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="couple" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Happy Couple</h2>
+                <div class="art-decoration"><i class="fas fa-leaf"></i></div>
+            </div>
+
+            <div class="couple-grid">
+                <div class="profile-card slide-in-left">
+                    <div class="img-wrapper groom-border">
+                        <img src="" alt="Groom">
+                    </div>
+                    <h3>Subhadip</h3>
+                    <p class="designation">The Groom</p>
+                    <div class="divider-small"></div>
+                    <p class="address">Vill: Harivanga, Bankura</p>
+                </div>
+
+                <div class="profile-card slide-in-right">
+                    <div class="img-wrapper bride-border">
+                        <img src="" alt="Bride">
+                    </div>
+                    <h3>Neha</h3>
+                    <p class="designation">The Bride</p>
+                    <div class="divider-small"></div>
+                    <p class="address">Vill: Kultuka, Bankura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--gold);">Wedding Events</h2>
+                <p style="color: #ccc; margin-top: 10px;">অনুষ্ঠান সূচি</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>গাত্রহরিদ্রা</h3>
+                        <p class="bengali-desc">কাঁচা হলুদের রঙে সাজুক বর ও কনে।</p>
+                        <div class="time-loc">
+                            <p><i class="far fa-calendar-alt"></i> March 3rd | 09:00 AM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Groom's Residence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>আইবুড়ো ভাত</h3>
+                        <p class="bengali-desc">জীবনের নতুন অধ্যায় শুরুর আগে শেষ ভোজ।</p>
+                        <div class="time-loc">
+                            <p><i class="far fa-calendar-alt"></i> March 3rd | Afternoon</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Groom's Residence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="content highlight-event">
+                        <h3>শুভ বিবাহ</h3>
+                        <p class="bengali-desc">দুটি হৃদয়ের মিলন ও মালাবদল।</p>
+                        <div class="time-loc">
+                            <p><i class="far fa-calendar-alt"></i>March 4rd | 07:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Bride's Residence (Kultuka)</p>
+                        </div>
+                        <span class="badge">Barjatri departs at 6:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>বউভাত</h3>
+                        <p class="bengali-desc">প্রীতিভোজ ও আনন্দ উৎসব।</p>
+                        <div class="time-loc">
+                            <p><i class="far fa-calendar-alt"></i> March 5th | 07:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Groom's Residence (Barkona)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue" class="venue-section">
+        <h2 class="section-title">Reception Venue</h2>
+
+        <div class="venue-details">
+            <h3 class="venue-name">Barkona</h3>
+            <p>Vill- Barkona</p>
+            <p>Dist- Bankura, West Bengal - 722133</p>
+            <p class="venue-bengali">(বারকোনা, বাঁকুড়া)</p>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14674.394857497255!2d87.168538!3d23.148332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f7988365859e99%3A0xc6c7694f4206584c!2sBarkona%2C%20West%20Bengal%20722133!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <a href="tel:+918900599633" class="rsvp-btn"><i class="fas fa-phone-alt"></i> Contact Us</a>
+    </section>
+
+    <footer>
+        <h2 class="footer-thankyou">Thank You</h2>
+        <p>We look forward to celebrating our special day with you!</p>
+        <p class="copyright">Subhadip ❤️ Neha | 2026</p>
+    </footer>
+
+    <div id="floating-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
